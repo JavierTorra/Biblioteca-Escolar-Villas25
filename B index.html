@@ -1,345 +1,411 @@
-Cofrecito . Un mundo de sorpresas para los niños. Tomó 2
-Formas
-Mi primera guia sobre el huerto 
-Mi gran libro de juegos.
-Pensando y midiendo
-Mi primer guia sobre el cambio climático 
-Los 100 mejores juegos infantiles 
-Todo lo que necesitas saber . Una enciclopedia para mentes curiosas.
-Mi primer guia sobre el cambio climático 
-Todo lo que necesitas saber de los animales 
-Mi primer diccionario. 
-Reciclajuego  
-Rinocerontes
-Mi primer Atlas del cuerpo humano. Larousse.
-Reciclamos 
-Loros
-100 palabras, mi pri
-Cantar,tocar y jugar 
-Animales de la selva
-Mi primer diccionario 1
-Cantar,tocar y jugar 
-Animales de la granja 
-Mi primer diccionario 
-Taller de papel y cartulina 
-Familias
-Busca y encuentra primeras palabras 
-Modela tus animales 
-¿Y si vivieras en…?
-Mi primer Larousse 
-Creando instrumentos con los niños 
-Historia del mundo para niños
-Diccionario con imágenes del cuerpo humano 
-Mi primo con sellos 
-Así somos
-Larousse los vehículos 
-El super director de cine 
-Así vivo yo
-Mi pequeño museo de bellas artes
-Ciencia mágica 
-Juegos de África
-El Manual del joven artista 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Escolar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .book {
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .book h3 {
+      margin: 0;
+    }
+    .book p {
+      margin: 5px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Biblioteca Escolar</h1>
+  </header>
+  <div class="container">
+    <input type="text" id="search" placeholder="Buscar libros por título o autor...">
+    <div id="book-list"></div>
+  </div>
 
+  <script>
+    const libros = [
+      { titulo: "Cofresito un mundo de sorpresas para niños Tomo 2", Biblioteca "1", autor: "NN", disponible: true },
+      { titulo: "formas", Biblioteca "1", autor: "NN", disponible: true },
+      { titulo: "Mi primera guia sobre el huerto", Biblioteca "1", autor: "NN", disponible: true },
+      { titulo: "mi primer guia sobre el cambio climatico", Biblioteca "1", autor: "NN", disponible: true },
+      { titulo: "Mi gran libro de juegos", Biblioteca "1", autor: "NN", disponible: true },
+      { titulo: "pensando y midiendo", Biblioteca "1", autor: "NN", disponible: true },
+      { titulo: "los 100 mejores juegos infantiles", Biblioteca "1", autor: "NN", disponible: true},
+      { titulo: "Todo lo que necesitas saber. una enciclopedia para mentes curiosas", Biblioteca "1", autor: "NN", disponible: true},
+      { titulo: "mi primer guia sobre el cambio climatico", Biblioteca "1", autor: "NN", disponible: true},
+      { titulo: "todo lo que necesitas saber de los animales", Biblioteca "1", autor: "NN", diponible: true},
+      { titulo: "mi primer diccionario", Biblioteca "1", autor: "NN", disponible: true},
+      { titulo: "Reciclajuego", Biblioteca "1", autor: "NN", diponible:true},
+      { titulo: "rinocerontes", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Mi primer Atlas del cuerpo humano. Larousse.", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Reciclamos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Loros", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "100 palabras, mi pri", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Cantar,tocar y jugar", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Animales de la selva", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Mi primer diccionario 1", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Cantar,tocar y jugar", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Animales de la granja", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Mi primer diccionario", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Taller de papel y cartulina", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Familias", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Busca y encuentra primeras palabras", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Modela tus animales", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "¿Y si vivieras en…?", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Mi primer Larousse", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Creando instrumentos con los niños", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Historia del mundo para niños", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Diccionario con imágenes del cuerpo humano", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Mi primo con sellos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Así somos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Larousse los vehículos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "El super director de cine", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Así vivo yo", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Mi pequeño museo de bellas artes", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Ciencia mágica", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Juegos de África", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "El Manual del joven artista", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Pensamientos lógico", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Los derechos de los niños", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Técnicas varias", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Formas", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La casa a tu alcance", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "ABC musical", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Sal si puedes", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La prensa a tu alcance", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La vuelta al mundo en 25 canciones", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La alternativa de juego", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "El fascinante mundo de las matemáticas", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Oh musica", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Mi pequeño manual de experimentos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La historia de la ciencia", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La arqueología a tu alcance", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Ven juega y descubre la ciencia", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Opuestos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "A bailar Colombia", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Mi pequeño manual de experimentos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Dibujos para niños", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Hago mis juguetes", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "1001cosas que debes buscar en la granja", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Con Pombo y platillos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Manualidades con arcilla", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "1001 cosas que debes buscar en pueblos y ciudades", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Niños invitando", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Tarjetas", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "1001 cosas que buscar en pueblos y ciudades", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Mensajes de las estrellas", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Mi día de suerte", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Maisy grande, maisy pequeña", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "África pequeño chaka…", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Camino a casa", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Ladrón de gallinas", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "África, pequeño chaka…", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "De verdad que no podía", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Ladrón de gallinas", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Encender la noche", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "De verdad que no podía", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "El lobo y los siete cabritillos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Dónde está el pastel", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Me llamo yoon", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "El gran libro del misterio", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Una cena elegante", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Me llamo yoon", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Los tres bandidos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Fernando furiosos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Diez semillas", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Los tres bandidos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Castor y frip lo reparan todo", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La familia numerozzi", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La peinete colorada", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Vaya apetito tiene el zorro", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Todos sois mis favoritos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Un tirón de la cola", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Un día diferente para el señor amos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Buenas noches gorila", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Mi hermana Aixa", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "De repente!", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Chigüiro viaja en chiva", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Cuántos de enredados y travesuras", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "¡Así fue! ¡No fue así! ¡No, así!", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "¡Al furgón!", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Cuentos picarescos para niños de américa latina", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Teo se disfraza", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Lobo", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Rosaura en bicicleta", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La gallina roja", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Tengo y el regalo de mamá", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "El ratoncito Roquefort", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Elenita", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La isla de los mimos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Caperucita roja", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Flotante", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Había una vez una", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "León y Beto", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "El pequeño tipo que quería saber quién se había hecho eso en su cabeza", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Adivina quién hace que", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Fabulas de tamalemeque", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Arquitectura para niños", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "El conejo y el mapurite", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "El libro de oro de los niños", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "En el desván", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Tengo y sus juguetes", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La escuela secreta de nasreen", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Fernando furioso", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "¡Beso, beso !", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La escuela secreta de nasreen", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Disfruta con las fabulas", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Cuentos por teléfono", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Si vez un monte de espuma y otro de poemas", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Cuentos pulgas", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Encender la noche", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Para que la randa ronde, el cuánto cante y el juego jugué", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Chiquito rey", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Adivinalo si puedes", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Tam-tam", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Bichonazas y adiviplantas", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Cuentos y relatos matemáticos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Una morena en la ronda", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Cuenta que te cuento", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Los viajes de Olga", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Tiki, Tiki, tai", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Ronda que ronda la ronda", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La fuga", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Pisa pisuela de color ciruela", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La vuelta al mundo en 25 canciones", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Lejos de mi país", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Pin uno pin dos", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Pies sucios", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Poemas de juguete", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "La calle es libre", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Quien no la adivine es bien tonto", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Ni era vaca ni era caballo", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Putinkaa serruma", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Frankenstein se hace un sándwich", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "No sé aburra", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Manuela color canela", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Chumbala cachumbala", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Dorotea y miguel", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "El aburrí de la luna", Biblioteca: "1", autor: "NN", disponible: true },
+      { titulo: "Manual práctico de técnicas para estudiar", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "¡Qué buena idea!", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Pequeños gestos para una vida orgánica", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Educación sexual: Guía para padres y educadores", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Atlas de Colombia y el mundo", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Biología para niños y jóvenes", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Lengua y literatura", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Danza traigo", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Preservación de alimentos y productos ancestrales", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Historia", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Las fiestas y el folclor en Colombia", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Cómo mejorar la autoestima", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Física y química", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Plantas navideñas del mundo", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "A escala humana", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Ciencias naturales", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Huellas de vida", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Nuevo testamento", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Danzas folclóricas colombianas", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Vivir para triunfar", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Los grandes exploradores de la historia", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Atlas del mundo", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Higiene mental", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Los buenos libros para niños y jóvenes", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Atlas de la tierra", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "La magia", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Manual de lectura en voz alta", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "El medio ambiente", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Jóvenes brillantes", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Flor Romero", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Agua para todos: Un problema mundial", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "A de África", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Reyna", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Granja integral autosuficiente", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Juegos cooperativos y educación física", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Diccionario de la lengua española", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "El milagro de las plantas", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Juegos multiculturales", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Diccionario estudiantil educativo", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Basurarte: Juegos al aire libre", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "El pequeño Larousse ilustrado", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Frutas y cítricos", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Juegos con balón", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Enciclopedia Espasa Pocket", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Abonos orgánicos", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Historia de las civilizaciones", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "En el tiempo de los dinosaurios", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "La huerta orgánica", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "1000 juegos y deportes populares", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Legislación ambiental", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "El banquete", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Las historias de los inventos", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Recursos naturales", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "El mito de la modernidad", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "El reciclaje", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Planificación ambiental", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Historias increíbles 2", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Historias increíbles 1", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Bitácora de los talleres literarios en Colombia", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "500 mujeres que hicieron historia en el mundo", Biblioteca: "2", autor: "NN", disponible: true },
+      { titulo: "La vuelta al mundo en ochenta cuentos", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Mitos, cuentos y leyendas de Latinoamérica y el Caribe", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "La invención de Hugo Cabret", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "¿Quién hizo los mundos?", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Cuentos de todos los colores", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Los mitos del sol", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Crónicas y relatos de la independencia", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "La bruja Yagá y otros cuentos", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "En el país de los Zenúes", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Alfredo Molano del Llano", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Yo seré tres millonea de niños", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Hace muchísimo tiempo", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Adiós a los próceres", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Antropología, los mejores", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Relatos históricos", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Estallidos en mi cabeza", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Sobre nupcias y ausencias, y otros cuentos", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Mitos griegos", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "El caballero de la armadura oxidada", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Historias de amores y desvaríos en América", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Naiyakay", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "El turno de la escriba", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Historia en cuentos 3", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Historia interminable", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Manual para corregir a niños malcriados", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Mitos, leyendas y realidades africanas", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Sabiduría de un pobre", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Bip-Bip", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Leyendas de nuestra América", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Gonzalo Torrente Ballester", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Cuentos para jugar", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Cuentos y leyendas de Colombia", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "El santero", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "La oveja negra y demás fábulas", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Vida cotidiana de las culturas amerindias", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Arreola Palindroma", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Fábulas y verdades", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Mitos y leyendas del mundo", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Andrés y el dragón matemático", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Mis cuentos preferidos de los Hermanos Grimm", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Relatos de las pampas wayuú", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Cuentos y leyendas de los masai", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Cuentos y leyendas de los trumai", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Madame Bovary", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Muertos de susto", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Hijos de la primavera", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "El jugador", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "El laberinto de dioses", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Dante Alighieri", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Mitos y leyendas colombianos", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "La mansión de Araucaima", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Drácula", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Duérmete, niño", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Goethe", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Cien años de soledad", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Mabungú", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Triunfo", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Poemas de amor, de pasión y de muerte", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Los jefes / Los cachorros", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Canciones de amor y dudas", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Tribulaciones", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "La fiesta del chivo", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Juguemos con la poesía", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "42 poemas", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Los cuadernos de don Rigoberto", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "¡Negras somos! Poesía y prosa", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Ficciones", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Danzantes del viento", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Poesía completa", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "La muerte de Artemio Cruz", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Umpala", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Memorial del convento", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "En las hondonadas maternas de la piel", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Decir New York: Testigo propio", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Joyas de la literatura colombiana", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Espíritu de pájaro", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "En pozos del ensueño", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "El beso de la mujer araña", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Raíz de amor", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Romeo y Julieta", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Grandes genios de la literatura universal", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Cantos populares de mi tierra", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Secundino el zapatero", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Manual de teatro", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Antropología de mujeres poetas afrocolombianas", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Quiero ser titiritero", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Árbol ávido", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "William Shakespeare en el corazón", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "La espada", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Taller de teatro", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Poesía y prosa", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Los más bellos poemas de amor", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Taller de juegos teatrales", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Antropología esencial", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Poesías", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Para nacer he nacido", Biblioteca: "2", autor: "NN", disponible: true },
+{ titulo: "Obra poética completa", Biblioteca: "2", autor: "NN", disponible: true }
+      
+    ];
 
-Pensamientos lógico 
-Los derechos de los niños
-Técnicas varias 
-Formas 
-La casa a tu alcance
-ABC musical 
-Sal si puedes 
-La prensa a tu alcance 
-La vuelta al mundo en 25 canciones 
-La alternativa de juego 
-El fascinante mundo de las matemáticas 
-Oh musica 
-Mi pequeño manual de experimentos
-La historia de la ciencia
-La arqueología a tu alcance 
-Ven juega y descubre la ciencia 
-Opuestos
-A bailar Colombia
-Mi pequeño manual de experimentos 
-Dibujos para niños 
-Hago mis juguetes 
-1001cosas que debes buscar en la granja 
-Con Pombo y platillos 
-Manualidades con arcilla 
-1001 cosas que debes buscar en pueblos y ciudades 
-Niños invitando 
-Tarjetas
-1001 cosas que buscar en pueblos y ciudades 
+    const searchInput = document.getElementById("search");
+    const bookList = document.getElementById("book-list");
 
+    function mostrarLibros(filtro = "") {
+      bookList.innerHTML = "";
+      const filtrados = libros.filter(libro =>
+        libro.titulo.toLowerCase().includes(filtro.toLowerCase()) ||
+        libro.autor.toLowerCase().includes(filtro.toLowerCase())
+      );
 
+      if (filtrados.length === 0) {
+        bookList.innerHTML = "<p>No se encontraron libros.</p>";
+        return;
+      }
 
-Mensajes de las estrellas 
-Mi día de suerte 
-Maisy grande, maisy pequeña 
-África pequeño chaka…
-Camino a casa 
-Ladrón de gallinas 
-África, pequeño chaka…
-De verdad que no podía 
-Ladrón de gallinas 
-Encender la noche 
-De verdad que no podía 
-El lobo y los siete cabritillos
-Dónde está el pastel 
-Me llamo yoon 
-El gran libro del misterio 
-Una cena elegante 
-Me llamo yoon 
-Los tres bandidos 
-Fernando furiosos
-Diez semillas
-Los tres bandidos 
-Castor y frip lo reparan todo 
-La familia numerozzi
-La peinete colorada 
-Vaya apetito tiene el zorro
-Todos sois mis favoritos 
-Un tirón de la cola 
-Un día diferente para el señor amos
-Buenas noches gorila 
-Mi hermana Aixa 
-De repente!
-Chigüiro viaja en chiva 
-Cuántos de enredados y travesuras 
-¡Así fue! ¡No fue así! ¡No, así!
-¡Al furgón!
-Cuentos picarescos para niños de américa latina 
-Teo se disfraza 
-Lobo 
-Rosaura en bicicleta 
-La gallina roja 
-Tengo y el regalo de mamá 
-El ratoncito Roquefort 
-Elenita 
-La isla de los mimos 
-Caperucita roja 
-Flotante
-Había una vez una 
-León y Beto 
-El pequeño tipo que quería saber quién se había hecho eso en su cabeza
-Adivina quién hace que
-Fabulas de tamalemeque 
-Arquitectura para niños 
-El conejo y el mapurite 
-El libro de oro de los niños 
-En el desván 
-Tengo y sus juguetes 
-La escuela secreta de nasreen
-Fernando furioso
-¡Beso, beso !
-La escuela secreta de nasreen 
-Disfruta con las fabulas 
-Cuentos por teléfono
-Si vez un monte de espuma y otro de poemas 
-Cuentos pulgas 
-Encender la noche 
-Para que la randa ronde, el cuánto cante y el juego jugué 
-Chiquito rey 
+      filtrados.forEach(libro => {
+        const div = document.createElement("div");
+        div.className = "book";
+        div.innerHTML = `
+          <h3>${libro.titulo}</h3>
+          <p><strong>Autor:</strong> ${libro.autor}</p>
+          <p><strong>Disponible:</strong> ${libro.disponible ? 'Sí' : 'No'}</p>
+        `;
+        bookList.appendChild(div);
+      });
+    }
 
+    searchInput.addEventListener("input", () => mostrarLibros(searchInput.value));
 
-Adivinalo si puedes 
-Tam-tam 
-
-
-Bichonazas y adiviplantas
-Cuentos y relatos matemáticos
-Una morena en la ronda 
-Cuenta que te cuento 
-Los viajes de Olga 
-Tiki, Tiki, tai
-Ronda que ronda la ronda 
-La fuga 
-Pisa pisuela de color ciruela 
-La vuelta al mundo en 25 canciones 
-Lejos de mi país 
-Pin uno pin dos 
-Pies sucios 
-Poemas de juguete 
-La calle es libre 
-Quien no la adivine es bien tonto 
-Ni era vaca ni era caballo
-Putinkaa serruma 
-Frankenstein se hace un sándwich 
-No sé aburra 
-Manuela color canela 
-Chumbala cachumbala 
-Dorotea y miguel 
-El aburrí de la luna 
-
-Biblioteca 2
-
-Manual practico de técnicas para estudiar 
-! Que buena idea !
-Pequeños gestos para una vida orgánica 
-Educación sexual guia para padres y educadores 
-Atlas de Colombia y el mundo 
-Biología para niños y jóvenes 
-Lengua y literatura 
-Danza traigo 
-Preservación de alimentos y productos ancestrales 
-Historia 
-Las fiestas y el folclor en colombia 
-Cómo mejorar la autoestima 
-Física y química 
-Plantas navideñas del mundo 
-A escala humana 
-Ciencias naturales 
-Plantas navideñas del mundo 
-Huellas de vida 
-Nuevo testamento 
-Danzas folclóricas colombianas 
-Vivir para triunfar 
-Los grandes exploradores de la historia 
-Atlas del mundo 
-Higiene mental 
-Los Buenos libros para niños y jóvenes 
-Atlas de la tierra 
-La magia 
-manual de lectura en voz alta 
-El medio ambiente 
-Jóvenes brillantes 
-Flor romero 
-Agua para todos Un problema mundial 
-A de África 
-Reyna 
-Granja integral autosuficiente 
-Juegos cooperativos y Edu física 
-Diccionario de la lengua española 
-El milagro de las plantas 
-Juegos multiculturales 
-Diccionario estudiantil educativo 
-Basurarte
-Juegos al aire libre 
-El pequeño Larousse ilustrado 
-Frutas y cítricos 
-Juegos con balón 
-Enciclopedia espasa pocket
-Abonos orgánicos 
-Historia de las civilizaciones
-En el tiempo de los dinosaurios 
-La huerta orgánica 
-Historia de las civilizaciones 
-1000 juegos y deportes populares 
-Legislación ambiental 
-El banquete 
-Las historias de los inventos 
-Recursos naturales 
-El mito de la modernidad 
-El reciclaje 
-Planificación ambiental 
-Historias increíbles 2
-Historias increíbles 1
-Bitácora de los talleres literarios en colombia 
-500 mujeres que hicieron historia en el mundo 
-LA VUELTA AL MUNDO EN OCHENTA CUENTOS
-MITOS, CUENTOS Y LEYENDAS DE LATINOAMÉRICA Y EL CARIBE
-LA INVENCIÓN DE HUGO CABRET
-LA VUELTA AL MUNDO EN OCHENTA CUENTOS 
-¿QUIÉN HIZO LOS MUNDOS?
-LA INVENCIÓN DE HUGO CABRET
-CUENTOS DE TODOS LOS COLORES
-LOS MITOS DEL SOL
-CRÓNICAS Y RELATOS DE LA INDEPENDENCIA
-LA BRUJA YAGÁ Y OTROS CUENTOS 
-EN EL PAÍS DE LOS ZENÚES
-ALFREDO MOLANO DEL LLANO LLANO
-YO SERÉ TRES MILLONEA DE NIÑOS 
-HACE MUCHÍSIMO TIEMPO
-ADIÓS A LOS PRÓCERES
-ANTROPOLOGIA, LOS MEJORES  RELATOS HISTÓRICOS
-HACE MUCHÍSIMO TIEMPO
-ESTALLIDOS EN MI CABEZA
-SOBRE NUPCIAS Y AUSENCIAS, Y OTROS CUENTOS 
-MITOS GRIEGOS
-EL CABALLERO DE LA ARMADURA OXIDADA 
-HISTORIAS DE AMORES Y DESVARIOS EN AMÉRICA 
-NAIYAKAY
-EL TURNO DE LA ESCRIBA
-HISTORIA EN CUENTOS 3 
-NAIYAKAY
-HISTORIA INTERMINABLE
-MANUAL PARA CORREGIR A NIÑOS MALCRIADOS
-MITOS, LEYENDAS Y REALIDADES AFRICANAS 
-SABIDURÍA DE UN POBRE 
-BIP-BIP
-LEYENDAS DE NUESTRA AMÉRICA
-GONZALO TORRENTE  BALLESTER 
-CUENTOS PARA JUGAR 
-CUENTOS Y LEYENDAS DE COLOMBIA
-EL SANTERO
-LA OVEJA NEGRA Y DEMÁS FÁBULAS 
-VIDA COTIDIANA DE LAS CULTURAS AMERINDIAS
-ARREOLA PALINDROMA
-FÁBULAS Y VERDADES
-MITOS Y LEYENDAS DEL MUNDO 
-ANDRÉS Y EL DRAGÓN MATEMÁTICO 
-MIS CUENTOS PREFERIDOS DE LOS HERMANOS GRIMM
-VIDA COTIDIANA DE LAS CULTURAS AMERINDIAS 
-ANDRÉS Y EL DRAGÓN MATEMÁTICO 
-RELATOS DE LAS PAMPAS WAYUÚ
-CUENTOS Y LEYENDAS DE LOS MASAI
-CUENTOS
-RELATOS DE LAS PAMPAS WAYUÚ
-CUENTOA Y LEYENDAS DE LOS TRUMAI
-MADAME BOVARY
-MUERTOS DE SUSTO
-HIJOS DE LA PRIMAVERA 
-EL JUGADOR
-VIDA COTIDIANA DE LAS CULTURAS AMERINDIAS 
-EL LABERINTO DE DIOSES
-DANTE ALIGHIERI
-MITOS Y LEYENDAS COLOMBIANOS
-EL LABERINTO DE DIOSES
-LA MANSIÓN DE ARAUCAIMA 
-DRÁCULA
-DUÉRMETE, NIÑO
-GOETHE
-CIEN AÑOS DE SOLEDAD 
-MABUNGÚ TRIUNFO
-POEMAS DE AMOR, DE PASIÓN Y DE MUERTE 
-LOS JEFES/ LOS CACHORROS
-CANCIONES DE AMOR Y DUDAS 
-TRIBULACIONES 
-LA FIESTA DEL CHIVO
-JUGUEMOS CON LA POESÍA 
-42 POEMAS 
-LOS CUADERNOS DE DON RIGOBERTO
-¡NEGRAS SOMOS!
-POESÍA Y PROSA 
-FICCIONES 
-DANZANTES DEL VIENTO
-POESÍA COMPLETA
-LA MUERTE DE ARTEMIO CRUZ
-DANZANTES DEL VIENTO
-UMPALA
-MEMORIAL DEL CONVENTO
-EN LAS HONDONADAS MATERNAS DE LA PIEL 
-DECIR NEW YORK: TESTIGO PROPIO 
-JOYAS DE LA LITERATURA COLOMBIANA
-ESPÍRITU DE PÁJARO EN POZOS DEL ENSUEÑO 
-EL BESO DE LA MUJER ARAÑA
-RAÍZ DE AMOR 
-ROMEO Y JULIETA
-GRANDES GENIOS DE LA LITERATURA UNIVERSAL
-CANTOS POPULARES DE MI TIERRA  SECUNDINO EL ZAPATERO
-MANUAL DE TEATRO
-LA INVENCIÓN DE MOREL 
-ANTROPOLOGÍA DE MUJERES POETAS AFROCOLOMBIANAS 
-QUIERO SER TITIRITERO
-ÁRBOL ÁVIDO
-WILLIAM SHAKESPEARE
-EN EL CORAZÓN LA ESPADA 
-TALLER DE TEATRO
-POESÍA Y PROSA
-TALLER DE TEATRO
-LOS MÁS BELLOS POEMAS DE AMOR 
-TALLER DE JUEGOS TEATRALES
-ANTROPOLOGÍA ESENCIAL 
-TALLER DE JUEGOS TEATRALES
-POESÍAS 
-PARA NACER HE NACIDO
-OBRA POETICA COMPLETA
+    // Mostrar todos los libros al cargar la página
+    mostrarLibros();
+  </script>
+</body>
+</html>
